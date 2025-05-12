@@ -2,7 +2,7 @@
 # 机场订阅
 proxy-providers:
   huayun:
-    url: "https://api-huacloud.net/sub?target=clash&insert=true&emoji=true&udp=true&clash.doh=true&new_name=true&filename=Flower_SS&url=https%3A%2F%2Fapi.xmancdn.net%2Fosubscribe.php%3Fsid%3D5197%26token%3DIgtdEUhKIkJT%26sip002%3D1"
+    url: "订阅"
     type: http
     interval: 86400
     health-check:
