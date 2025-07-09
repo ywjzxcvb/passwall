@@ -104,7 +104,7 @@ proxy-groups:
   - {name: 🤖 ChatGPT, <<: *pr}
   - {name: 🎮 STEAM, <<: *pr} 
   - {name: 🎮 STEAMCN, <<: *pr}
-  - {name: 🎮 STEAM下载地区, <<: *pr}
+  - {name: 🎮 STEAM下载, <<: *pr}
   - {name: 🎮 SONY, <<: *pr} 
   - {name: 👨🏿‍💻 GitHub, <<: *pr}
   - {name: 🐬 OneDrive, <<: *pr}
@@ -124,10 +124,10 @@ proxy-groups:
   - {name: 🇸🇬 新加坡节点, type: select, include-all: true, filter: "(?i)新加坡|坡|狮城|SG|Singapore"}
   - {name: 🇼🇸 台湾节点, type: select, include-all: true, filter: "(?i)台|新北|彰化|TW|Taiwan"}
   - {name: 🇰🇷 韩国节点, type: select, include-all: true, filter: "(?i)KR|Korea|KOR|首尔|韩|韓"}
-  - {name: ♻️ 香港智能, type: smart, uselightgbm: false, collectdata: false, include-all: true, interval: 300, filter: "(?=.*(港|HK|(?i)Hong))^((?!(台|日|韩|新|深|美)).)*$"}
-  - {name: ♻️ 日本智能, type: smart, uselightgbm: false, collectdata: false, include-all: true, interval: 300, filter: "(?=.*(日|JP|(?i)Japan))^((?!(港|台|韩|新|美)).)*$" }
-  - {name: ♻️ 新加坡智能, type: smart, uselightgbm: false, collectdata: false, include-all: true, interval: 300, filter: "(?=.*(新加坡|坡|狮城|SG|Singapore))^((?!(港|台|韩|日|美)).)*$" }
-  - {name: ♻️ 美国智能, type: smart, uselightgbm: false, collectdata: false, include-all: true, interval: 300, filter: "(?=.*(美|US|(?i)States|America))^((?!(港|台|日|韩|新)).)*$"}
+  - {name: ♻️ 香港智能, type: smart, uselightgbm: true, collectdata: false, include-all: true, interval: 300, filter: "(?=.*(港|HK|(?i)Hong))^((?!(台|日|韩|新|深|美)).)*$"}
+  - {name: ♻️ 日本智能, type: smart, uselightgbm: true, collectdata: false, include-all: true, interval: 300, filter: "(?=.*(日|JP|(?i)Japan))^((?!(港|台|韩|新|美)).)*$" }
+  - {name: ♻️ 新加坡智能, type: smart, uselightgbm: true, collectdata: false, include-all: true, interval: 300, filter: "(?=.*(新加坡|坡|狮城|SG|Singapore))^((?!(港|台|韩|日|美)).)*$" }
+  - {name: ♻️ 美国智能, type: smart, uselightgbm: true, collectdata: false, include-all: true, interval: 300, filter: "(?=.*(美|US|(?i)States|America))^((?!(港|台|日|韩|新)).)*$"}
   - {name: 🌐 全部节点, type: select, include-all: true}
 
 # 规则匹配
@@ -141,7 +141,7 @@ rules:
   - RULE-SET,ai,🤖 ChatGPT
   - RULE-SET,STEAM,🎮 STEAM
   - RULE-SET,STEAMCN,🎮 STEAMCN
-  - RULE-SET,STEAM下载地区,🎮 STEAM下载地区
+  - RULE-SET,STEAM下载,🎮 STEAM下载
   - RULE-SET,SONY,🎮 SONY
   - RULE-SET,github_domain,👨🏿‍💻 GitHub
   - RULE-SET,youtube_domain,📹 YouTube
@@ -193,6 +193,6 @@ rule-providers:
   
   STEAM: { <<: *class, url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Steam.list"}
   STEAMCN: { <<: *class, url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Ruleset/SteamCN.list"}
-  STEAM下载地区: { <<: *class, url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Ruleset/SteamRegionCheck.list"}
+  STEAM下载: { <<: *class, url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Ruleset/SteamRegionCheck.list"}
   SONY: { <<: *class, url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Sony.list"}
   Javdb: { <<: *class, url: "https://raw.githubusercontent.com/ywjzxcvb/passwall/refs/heads/main/javdb.list"}
